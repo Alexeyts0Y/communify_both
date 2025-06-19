@@ -1,0 +1,181 @@
+/* CreatePostPage.module.css */
+.pageContainer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+}
+
+.formHeader {
+    border-radius: 15px;
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+}
+
+.postForm {
+    width: 100%;
+    max-width: 550px;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.postHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px;
+}
+
+.postHeader__leftPart {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.profilePictureImage {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profileName {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.dateOfCreation {
+    color: #808080;
+    font-size: smaller;
+}
+
+.divider {
+    width: calc(100% - 30px);
+    height: 2px;
+    background-color: rgb(240, 240, 240);
+    margin: 0 auto;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+}
+
+.contentInput {
+    width: 100%;
+    min-height: 100px;
+    border: none;
+    resize: none;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0;
+}
+
+.contentInput:focus {
+    outline: none;
+}
+
+.images {
+    height: 100%;
+    width: 100%;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.postFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.postFooter__leftPart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mediaButton {
+    background: none;
+    border: none;
+    color: #1877f2;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.mediaButton:hover {
+    background-color: rgba(24, 119, 242, 0.1);
+}
+
+.submitButton {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submitButton:disabled {
+    background-color: #e4e6eb;
+    color: #bcc0c4;
+    cursor: not-allowed;
+}
+
+.imagePreviewContainer {
+    position: relative;
+    margin-top: 10px;
+}
+
+.removeImageButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.2s;
+}
+
+.removeImageButton:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.closeIcon {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}

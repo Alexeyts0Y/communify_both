@@ -1,0 +1,39 @@
+.container {
+    margin: 20px 25% 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 66% 33%;
+    align-items: start;
+    padding-top: 0;
+}
+
+.leftPart {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto;
+}
+
+.rightPart {
+    position: sticky;
+    top: 80px;
+    align-self: flex-start;
+    height: fit-content;
+    max-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* src/pages/Group/Group.module.css */
+/* ... твои существующие стили ... */
+
+.createPostButtonContainer {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-bottom: 20px; /* Отступ от контейнера постов */
+    display: flex;
+    justify-content: flex-start;
+}

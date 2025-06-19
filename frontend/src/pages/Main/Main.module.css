@@ -1,0 +1,19 @@
+.mainContainer {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.loadMoreTrigger {
+    height: 50px; /* Дает немного пространства для срабатывания */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+}

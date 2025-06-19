@@ -1,0 +1,54 @@
+.logo {
+    height: 80%;
+    width: 80%;
+    object-fit: cover;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatarContainer {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 4px solid rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 0;
+    background-color: white;
+}
+
+.container {
+    margin: 0 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.anotherContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.authLink {
+    color: black;
+    text-decoration: none;
+}
+
+.authLink:hover {
+    text-decoration: underline;
+}

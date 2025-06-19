@@ -1,0 +1,105 @@
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Optional: center the title */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Avatar specific styles */
+.avatarSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px; /* Add some space below the avatar section */
+}
+
+.avatarPreview {
+    width: 120px; /* Adjust size as needed */
+    height: 120px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover;
+    border: 2px solid #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.avatarUploadLabel {
+    cursor: pointer;
+    color: #6e8efb; /* A link-like color */
+    font-weight: 500;
+    padding: 8px 12px;
+    border: 1px solid #6e8efb;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.avatarUploadLabel:hover {
+    background-color: #6e8efb;
+    color: white;
+}
+
+/* Hide the actual file input, we style the label */
+.fileInput {
+    display: none;
+}
+
+/* Styles for general form fields */
+.field { /* Renamed from formGroup for consistency */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight: 500;
+    color: #333;
+}
+
+.input, .textarea /* Textarea might not be used here, but good to have */ {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    width: 100%; /* Make input take full width of its container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.input:focus, .textarea:focus {
+    outline: none;
+    border-color: #6e8efb;
+}
+
+.textarea { /* If you ever add a textarea */
+    resize: vertical;
+    min-height: 100px;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: flex-end; /* Optional: align buttons to the right */
+}
+
+.errorText {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px; /* Adjust spacing if needed */
+    margin-bottom: 10px;
+}

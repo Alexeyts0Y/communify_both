@@ -1,0 +1,65 @@
+.rightSidebar {
+    /* width: 300px; */
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    position: fixed;
+    right: 20%;
+    top: 80px;
+    height: auto;
+    overflow-y: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebarSection {
+    margin-bottom: 20px;
+}
+
+.sidebarSection h3 {
+    margin-bottom: 15px;
+    color: #65676b;
+}
+
+.sidebarItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebarItem {
+    display: flex;
+    max-width: 180px;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.sidebarItem:hover {
+    background-color: #f0f2f5;
+}
+
+.sidebarAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.joinButton {
+    margin-left: auto;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
