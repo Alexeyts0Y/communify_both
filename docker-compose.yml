@@ -1,3 +1,5 @@
+version: '3.3'
+
 services:
   nginx:
     image: nginx:stable-alpine
@@ -23,8 +25,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     networks:
       - dev
 
@@ -54,47 +55,40 @@ services:
     image: minio/minio
     container_name: minio_vds
     ports:
-      - "9000:9000" # S3 API
-      - "9001:9001" # MinIO Console
+      - "9000:9000"
+      - "9001:9001"
     volumes:
       - minio_data:/data
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
       MINIO_PROMETHEUS_AUTH_TYPE: "public"
-
       TARGET_BUCKET_NAME: communify-images
     command: server /data --address ":9000" --console-address ":9001"
     healthcheck:
-
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 5s
     networks:
       - dev
 
   setup-minio:
-    image: minio/mc # Рекомендуется использовать конкретную версию mc
+    image: minio/mc
     depends_on:
-      minio_vds:
-        condition: service_healthy # Ждем, пока MinIO станет здоровым
+      - minio_vds
     environment:
-      # Передаем учетные данные администратора и имя бакета
-      MC_HOST_myminio: http://minioadmin:minioadmin@minio_vds:9000 # !!! ИСПОЛЬЗУЙТЕ ТОТ ЖЕ ПАРОЛЬ, ЧТО И ВЫШЕ !!!
-      TARGET_BUCKET_NAME: communify-images # То же имя бакета, что и выше
+      MC_HOST_minio: http://minioadmin:minioadmin@minio_vds:9000
+      TARGET_BUCKET_NAME: communify-images
     entrypoint: >
       /bin/sh -c "
-      echo 'Ожидание готовности MinIO...';
+      echo 'Waiting for MinIO...';
       sleep 5;
-      echo 'Проверка/создание бакета communify-images...';
-      mc mb myminio/communify-images --ignore-existing;
-
-      echo 'Установка политики download (публичный доступ на чтение) для бакета communify-images...';
-      mc anonymous set download myminio/communify-images;
-
-      echo 'Настройка MinIO завершена. Бакет communify-images теперь публично доступен для чтения.';
+      echo 'Checking/creation of bucket communify-images...';
+      mc mb minio/communify-images --ignore-existing;
+      echo 'Setting policy download...';
+      mc anonymous set download minio/communify-images;
+      echo 'MinIO configuration completed.';
       "
     networks:
       - dev
