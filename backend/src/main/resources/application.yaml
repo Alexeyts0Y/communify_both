@@ -38,7 +38,7 @@ jwt:
     expiration: 30000000
 
 minio:
-    url: http://127.0.0.1:9000
+    url: http://194.87.98.76:9000
     accessKey: minioadmin
     secretKey: minioadmin
     bucketName: communify-images
